@@ -25,7 +25,185 @@
   src: url("../fonts/Gilroy/Gilroy-ExtraBold.ttf");
   font-weight: 800;
 }
-
+.icon {
+  width: 16px;
+  height: 16px;
+  transition: 0.6s all;
+}
 .wrapper {
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px 10px;
+  color: #1f2428;
+  font-weight: 600;
+  font-size: 15px;
+}
+.logo {
+  max-width: 170px;
+}
+.logo img {
+  width: 100%;
+}
+.nav-collapse {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: auto;
+}
+.nav__link {
+  transition: 0.6s all;
+  position: relative;
+}
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  background: #00c97b;
+  height: 2px;
+  width: 0;
+  border-radius: 10px;
+  transition: 0.6s all;
+  margin: 0 auto;
+}
+.nav__link:hover {
+  color: #00c97b;
+}
+.nav__link:hover::before {
+  width: 100%;
+}
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: auto;
+}
+.login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.6s all;
+}
+.login:hover {
+  color: #00c97b;
+}
+.login:hover .icon-user {
+  stroke: #00c97b;
+}
+.icon-user {
+  stroke: #1f2428;
+  stroke-width: 3;
+  width: 18px;
+  height: 18px;
+}
+.btn {
+  padding: 15px 30px;
+  border: solid 1px #ccc;
+  background: #ccc;
+  color: #333;
+}
+.btn-primary {
+  border-radius: 36px;
+  background: linear-gradient(90deg, #00c97b 0%, #00d981 96.96%);
+  box-shadow: 0px 4px 4px 0px rgba(1, 203, 124, 0.2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  transition: 0.6s all;
+}
+.btn-primary:hover {
+  transform: scale(0.95);
+}
+.wrapper-menu {
+  width: 24px;
+  height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 330ms ease-out;
+}
+
+.wrapper-menu.open {
+  transform: rotate(-45deg);
+}
+
+.line-menu {
+  background-color: #1f2428;
+  border-radius: 5px;
+  width: 100%;
+  height: 2px;
+}
+
+.line-menu.half {
+  width: 50%;
+}
+
+.line-menu.start {
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: right;
+}
+
+.open .line-menu.start {
+  transform: rotate(-90deg) translateX(1px);
+}
+
+.line-menu.end {
+  align-self: flex-end;
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: left;
+}
+
+.open .line-menu.end {
+  transform: rotate(-90deg) translateX(-1px);
+}
+@media screen and (max-width: 920px) {
+  .header {
+    padding: 30px 20px;
+  }
+  .wrapper-menu {
+    display: flex;
+    margin-left: auto;
+  }
+  .logo {
+    z-index: 9999;
+  }
+  .nav-collapse {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    padding: 50px;
+    flex-direction: column;
+    background: #fff;
+    transition: 0.6s all;
+  }
+  .nav {
+    flex-direction: column;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .auth {
+    flex-direction: column;
+    margin: 0;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .nav-collapse.is-active {
+    left: 0;
+  }
 }

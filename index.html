@@ -9,17 +9,35 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header container">
         <a href="#" class="logo">
           <img src="./assets/img/logo.svg" alt="" />
         </a>
-        <nav class="nav">
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-        </nav>
+        <div class="nav-collapse">
+          <nav class="nav">
+            <a href="#" class="nav__link">Как покупать</a>
+            <a href="#" class="nav__link">Распродажи</a>
+            <a href="#" class="nav__link">Цены</a>
+            <a href="#" class="nav__link">Помощь</a>
+            <a href="#" class="nav__link">Бонусы</a>
+            <a href="#" class="nav__link">Блог</a>
+            <a href="#" class="nav__link">Магазины</a>
+          </nav>
+          <div class="auth">
+            <a href="" class="login">
+              <svg class="icon icon-user">
+                <use xlink:href="./assets/img/icons/svg-sprite.svg#user"></use>
+              </svg>
+              <span>Вход</span>
+            </a>
+            <button class="btn btn-primary">Связаться с нами</button>
+          </div>
+        </div>
+        <div class="wrapper-menu">
+          <div class="line-menu half start"></div>
+          <div class="line-menu"></div>
+          <div class="line-menu half end"></div>
+        </div>
       </header>
     </div>
     <script src="./assets/js/app.js"></script>
